@@ -1,4 +1,4 @@
-const { getAll, create, remove, update } = require('../controllers/user.controllers');
+const { getAll, create, remove, update, login } = require('../controllers/user.controllers');
 const express = require('express');
 
 const routerUser = express.Router();
@@ -7,7 +7,10 @@ routerUser.route('/')
     .get(getAll)
     .post(create);
 
-    routerUser.route('/:id')
+routerUser.route('/login')
+    .post(login)
+
+routerUser.route('/:id')
     // .get(getOne)
     .delete(remove)
     .put(update);
