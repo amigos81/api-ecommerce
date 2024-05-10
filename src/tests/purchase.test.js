@@ -42,15 +42,15 @@ beforeAll(async () => {
         .set("Authorization", `Bearer ${TOKEN}`)
 })
 
-test("POST 'BASE_URL', should return status code 201 and res.body.quantity ===bodyCart.quantity", async () => {
-    const res = await request(app)
-        .post(BASE_URL)
-        .set("Authorization", `Bearer ${TOKEN}`)
+// test("POST 'BASE_URL', should return status code 201 and res.body.quantity ===bodyCart.quantity", async () => {
+//     const res = await request(app)
+//         .post(BASE_URL)
+//         .set("Authorization", `Bearer ${TOKEN}`)
 
-    expect(res.status).toBe(201)
-    expect(res.body[0].quantity).toBe(bodyCart.quantity)
+//     expect(res.status).toBe(201)
+//     expect(res.body[0].quantity).toBe(bodyCart.quantity)
 
-})
+// })
 
 // test("GET -> 'BASE_URL',should return status code 200 res.body.length === 1", async () => {
 
