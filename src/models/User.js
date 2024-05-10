@@ -24,7 +24,7 @@ const User = sequelize.define('user', {
         type: DataTypes.STRING,
         allowNull: false
     },
-});
+},);
 
 User.beforeCreate(async (user) => {
     const password = user.password
@@ -32,11 +32,10 @@ User.beforeCreate(async (user) => {
     user.password = hashedPassword
 })
 
-User.prototype.toJSON=function(){
-    const values={...this.get()}
-    delete values.password
-    return values
-}
-
+User.prototype.toJSON = function () {
+    const values = { ...this.get() };
+    delete values.password;
+    return values;
+};
 
 module.exports = User;
